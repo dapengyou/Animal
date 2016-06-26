@@ -6,7 +6,7 @@
 <struts>
 
 	<package name="root" namespace="/bus" extends="struts-default">
-		
+		 <!-- 注册的前分发 -->
 		<action name="toregsiter" class="regsiterAction" method="toregsiter">
 			<result name="toregsiter">/bus/regsiter.jsp</result>
 			
@@ -18,15 +18,24 @@
 		</action>
 	</package>
 	
-	<package name="root" namespace="/bus" extends="struts-default">
+	<package name="rootLogin" namespace="/bus" extends="tiles-default">
+	    <!-- 登录的前分发 -->
 	    <action name="tologin" class="loginAction" method="tologin">
 			<result name="tologin">/bus/login.jsp</result>
 		</action>
-		
-	    <action name="login" class="loginMainAction" method="login">
+		<!-- method方法在Action的函数方法要同名 -->
+	    <action name="login" class="loginMainAction" method="login" >
 			<result name="login">/bus/index.jsp</result>
+			<result name="tologin">/bus/login.jsp</result>
+			<result name="input">/bus/login.jsp</result>
+			<!-- tiles整合 -->
+			<result name="index" type="tiles">bus_index</result>
+		</action>
+		<!--从index.jsp启动时调用 -->
+		<action name="index" class="indexAction" method="index">
+			<result name="index" type="tiles">bus_index</result>
 		</action>
 	 </package>
-
-    
+	
+	
 </struts>

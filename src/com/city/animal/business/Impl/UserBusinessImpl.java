@@ -6,6 +6,8 @@ import java.io.InputStream;
 import java.sql.Blob;
 
 import org.hibernate.LobHelper;
+import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,6 +41,34 @@ public class UserBusinessImpl implements IUser{
 		Blob bphoto=lh.createBlob(in,in.available());
 		uv.setFile(bphoto);
 		sf.getCurrentSession().save(uv);
+	}
+
+	@Override
+	public boolean validate(String username, String password) throws Exception {
+		boolean result=false;
+		
+		Session session=sf.getCurrentSession();
+		String hql="select count(*) from UserValue uv where uv.username=:username and uv.password=:password";
+		Query query=session.createQuery(hql);
+		query.setString("username",username);
+		query.setString("password",password);
+		
+		long count=(Long)query.uniqueResult();
+//		System.out.println(count);
+//		System.out.println("select uv.power from UserValue uv where uv.username=:username");
+		if(count>0){
+			result=true;
+		}
+		
+		return result;
+	}
+
+	@Override
+	public UserValue gotUser(String username) throws Exception {
+		// TODO Auto-generated method stub
+		Session session=sf.getCurrentSession();
+		UserValue uv=session.get(UserValue.class, username);
+		return uv;
 	}
 
 }

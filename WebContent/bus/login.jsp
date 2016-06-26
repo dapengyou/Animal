@@ -9,20 +9,18 @@
 
 </head>
 <body>
-<s:form action="login" namespace="/bus" method="post" enctype="multipart/form-data" >
+<s:form action="login" namespace="/bus" method="post"  >
 <table width="319" height="204" border="0" align="center" cellpadding="1" cellspacing="1" bgcolor="#66FF99">
   <tr>
    <s:textfield name="uv.username" key="login.username"></s:textfield>
   </tr>
   <tr>
-    
-    <s:textfield key="login.password"></s:textfield>
+    <s:password name="uv.password" key="login.password"></s:password>
   </tr>
   <tr>
   	<td align="right"><s:a href = "toregsiter" >注册</s:a></td>
     <s:submit key="login.ok" ></s:submit>
     <td align="right"><s:a href = "tologin" >取消</s:a></td>
-  
   </tr>
 </table>
 </s:form>
