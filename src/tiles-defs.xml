@@ -2,15 +2,26 @@
 <!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN" "http://struts.apache.org/dtds/tiles-config_2_0.dtd">
 
 <tiles-definitions>
-     <definition name=".base" template="/layout/layout.jsp">
+    <definition name=".base" template="/layout/layout.jsp">
       	<put-attribute name="top" value="/include/top.jsp" />
     	<put-attribute name="left" value="/include/left.jsp" />
     	<put-attribute name="right" value="/include/right.jsp" />
     	<put-attribute name="footer" value="/include/footer.jsp" />
     </definition>
+    <!-- 用户查询 -->
     <definition name="bus_index" extends=".base">
       <put-attribute name="body" value="/bus/index.jsp" />
     </definition>
-  
-
+    <!-- 线路 -->
+  	 <definition name="stationLine_add" extends=".base">
+      <put-attribute name="body" value="/stationLine/stationLineAdd.jsp" />
+    </definition>
+    <!-- 司机 -->
+    <definition name="driver_add" extends=".base">
+      <put-attribute name="body" value="/driver/driverAdd.jsp" />
+    </definition>
+    <!-- 公交车 -->
+    <definition name="bus_add" extends=".base">
+      <put-attribute name="body" value="/buses/busAdd.jsp" />
+    </definition>
 </tiles-definitions>

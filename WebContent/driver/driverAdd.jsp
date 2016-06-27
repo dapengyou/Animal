@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@ taglib uri="/struts-tags" prefix="s"%>
 
-<h1>你好</h1>
+<h1>driver</h1>

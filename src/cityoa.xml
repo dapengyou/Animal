@@ -4,9 +4,7 @@
         "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
-
-	<package name="root" namespace="/bus" extends="struts-default">
-		 <!-- 注册的前分发 -->
+<package name="root" namespace="/bus" extends="struts-default">
 		<action name="toregsiter" class="regsiterAction" method="toregsiter">
 			<result name="toregsiter">/bus/regsiter.jsp</result>
 			
@@ -19,23 +17,42 @@
 	</package>
 	
 	<package name="rootLogin" namespace="/bus" extends="tiles-default">
-	    <!-- 登录的前分发 -->
+	   
 	    <action name="tologin" class="loginAction" method="tologin">
 			<result name="tologin">/bus/login.jsp</result>
 		</action>
-		<!-- method方法在Action的函数方法要同名 -->
 	    <action name="login" class="loginMainAction" method="login" >
-			<result name="login">/bus/index.jsp</result>
 			<result name="tologin">/bus/login.jsp</result>
 			<result name="input">/bus/login.jsp</result>
-			<!-- tiles整合 -->
 			<result name="index" type="tiles">bus_index</result>
 		</action>
-		<!--从index.jsp启动时调用 -->
+		
+		<!-- user查询界面 -->
 		<action name="index" class="indexAction" method="index">
 			<result name="index" type="tiles">bus_index</result>
 		</action>
 	 </package>
-	
+	<!-- 线路查询界面 -->
+	 <package name="rootStationLine" namespace="/stationLine" extends="tiles-default">
+	    <action name="stationLine" class="stationLineAction" method="stationLine" >
+			<result name="stationLine" type="tiles">stationLine_add</result>
+		</action>
+		
+	 </package>
+	 
+	 <!-- 公交车查询界面 -->
+	<package name="Bus" namespace="/buses" extends="tiles-default">
+	    <action name="bus" class="busAction" method="bus" >
+			<result name="bus" type="tiles">bus_add</result>
+		</action>
+		
+	 </package>
+	 
+	  <!-- 司机查询界面 -->
+	 <package name="Driver" namespace="/driver" extends="tiles-default">
+	    <action name="driver" class="driverAction" method="driver" >
+			<result name="driver" type="tiles">driver_add</result>
+		</action>
+	 </package> 
 	
 </struts>
