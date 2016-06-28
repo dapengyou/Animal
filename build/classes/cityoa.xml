@@ -7,7 +7,6 @@
 <package name="root" namespace="/bus" extends="struts-default">
 		<action name="toregsiter" class="regsiterAction" method="toregsiter">
 			<result name="toregsiter">/bus/regsiter.jsp</result>
-			
 		</action>
 		
 		<action name="regsiter" class="regsiterMainAction" method="regsiter">
@@ -34,6 +33,10 @@
 	 </package>
 	<!-- 线路查询界面 -->
 	 <package name="rootStationLine" namespace="/stationLine" extends="tiles-default">
+	    <action name="tostationLine" class="toStationLineAction" method="tostationLine">
+			<result name="tostationLine" type="tiles">stationLine_add</result>
+		</action>
+	    
 	    <action name="stationLine" class="stationLineAction" method="stationLine" >
 			<result name="stationLine" type="tiles">stationLine_add</result>
 		</action>
@@ -42,6 +45,9 @@
 	 
 	 <!-- 公交车查询界面 -->
 	<package name="Bus" namespace="/buses" extends="tiles-default">
+	    <action name="tobus" class="toBusAction" method="tobus">
+			<result name="tobus" type="tiles">bus_add</result>
+		</action>
 	    <action name="bus" class="busAction" method="bus" >
 			<result name="bus" type="tiles">bus_add</result>
 		</action>
@@ -50,8 +56,12 @@
 	 
 	  <!-- 司机查询界面 -->
 	 <package name="Driver" namespace="/driver" extends="tiles-default">
+	     <action name="todriver" class="toDriverAction" method="todriver">
+			<result name="todriver" type="tiles">driver_add</result>
+		</action>
 	    <action name="driver" class="driverAction" method="driver" >
 			<result name="driver" type="tiles">driver_add</result>
+			<result name="input" type="tiles">driver_add</result>
 		</action>
 	 </package> 
 	

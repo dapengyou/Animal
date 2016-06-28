@@ -23,11 +23,12 @@
          
         <property name="lastBus" />
          
-         <set name="stations" table="staionLine" inverse="false">
-       		<key column="IdCar" />
+        <set name="stations" table="station_bus" >
+       		<key column="id" />
        		<many-to-many class="StationLineValue" column="stationName" />
        	</set>
-       	<many-to-one name="driver" class="DriverValue" column="driverId" ></many-to-one>
+       	
+       	<many-to-one name="driver" class="DriverValue" column="driverId" ></many-to-one> 
        	
     </class>
 

@@ -28,17 +28,18 @@
 			<li>
 				<a href="#">司机管理</a>
 				<ul>
-				<li><a href="../driver/driver">查看司机信息</a></li>
+				<li><a href="../driver/todriver">添加司机信息</a></li>
 				<li><a href="updateDriver">修改司机信息</a></li>
+				<li><a href="../driver/driver">查看司机信息</a></li>
 				
 				</ul>
 			</li>
 			<li>
 				<a href="#">管理公交线路</a>
 				<ul>
-					<li><a href="../stationLine/stationLine">查看线路</a></li>
+					<li><a href="../stationLine/tostationLine">添加线路</a></li>
 					<li><a href="modfybus.do">修改线路</a></li>
-					<li><a href="addbus.jsp">添加线路</a></li>
+					<li><a href="addbus.jsp">查看线路</a></li>
 					<li><a href="delbus.do">删除线路</a></li>
 				
 				</ul>
@@ -46,8 +47,8 @@
 			<li>
 			<a href="#">管理车辆信息</a>
 			<ul>
-				<li><a href="../buses/bus">查看信息</a></li>
-				<li><a href="addstation.jsp">添加信息</a></li>
+				<li><a href="../buses/tobus">添加信息</a></li>
+				<li><a href="addstation.jsp">查看信息</a></li>
 				<li><a href="delstation.do">删除信息</a></li>
 				<li><a href="modfystation.do">修改信息</a></li>	
 	

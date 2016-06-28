@@ -12,7 +12,7 @@
 
 <hibernate-mapping package="com.city.animal.value">
 
-    <class name="StationLineValue" table="stationline">
+    <class name="StationLineValue" table="stationLine">
         <id name="stationName" column="stationName">
         </id>
         
@@ -23,8 +23,8 @@
         <property name="moveTime"/>
         
         
-          <set name="buses" table="Bus" inverse="true">
-       		<key column="stationName" />
+         <set name="buses" table="station_bus" inverse="true">
+       		<key column="id" />
        		<many-to-many class="BusValue" column="IdCar" />
        	</set>
     </class>

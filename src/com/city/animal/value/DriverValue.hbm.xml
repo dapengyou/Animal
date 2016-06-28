@@ -16,8 +16,9 @@
         <id name="driverId" column="driverId">
             <generator class="native"/>
         </id>
-        <property name="driverName" />
+        <property name="driverName"/>
         <property name="identity"/>
+        <property name="introduce"/>
         
    <set name="buses" table="bus">
        <key column="driverId"></key>

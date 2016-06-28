@@ -9,15 +9,18 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import com.city.animal.business.IBus;
+import com.city.animal.business.IStationLine;
 import com.city.animal.business.IUser;
 import com.city.animal.value.BusValue;
+import com.city.animal.value.StationLineValue;
 import com.city.animal.value.UserValue;
 import com.opensymphony.xwork2.ActionSupport;
-@Controller("busAction")
+
+@Controller("toBusAction")
 @Scope("prototype")
-public class BusAction extends ActionSupport{
+public class ToBusAction extends ActionSupport{
 	IBus ib = null;
-	BusValue bv = null;
+	BusValue nv = null;
 	
 	public IBus getIb() {
 		return ib;
@@ -27,18 +30,17 @@ public class BusAction extends ActionSupport{
 		this.ib = ib;
 	}
 
-	
-	
-	public BusValue getBv() {
-		return bv;
+	public BusValue getNv() {
+		return nv;
 	}
-	public void setBv(BusValue bv) {
-		this.bv = bv;
+
+	public void setNv(BusValue nv) {
+		this.nv = nv;
 	}
-	public String bus() throws Exception
+
+	public String tobus() throws Exception
 	{
-		ib.add(bv);
-		return "bus";
+		return "tobus";
 	}
 	
 }

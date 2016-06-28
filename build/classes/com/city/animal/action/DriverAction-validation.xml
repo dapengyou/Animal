@@ -1,0 +1,29 @@
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.2//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+
+<validators>
+	<field name="dv.driverName">
+		<field-validator type="requiredstring">
+			<message>车主姓名不能为空</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="minLength">4</param>
+			<param name="maxLength">8</param>
+			<message>车主姓名必须在4到8位之间</message>
+		</field-validator>
+	</field>
+
+	<field name="dv.identity">
+		<field-validator type="requiredstring">
+			<message>身份证号不能为空</message>
+		</field-validator>
+		<field-validator type="regex">
+			<param name="regexExpression"><![CDATA[^\d{5}|\d{8}$]]></param>
+			<message>输入合法身份证在5到8位之间</message>
+		</field-validator>
+	</field>
+	
+	
+	
+</validators>

@@ -6,7 +6,14 @@ public class DriverValue {
 	private int driverId;	//司机ID
 	private String driverName;	//车主姓名
 	private String identity;		//身份证
+	private String introduce;	//车主介绍
 	private Set<BusValue> buses = null;
+	public String getIntroduce() {
+		return introduce;
+	}
+	public void setIntroduce(String introduce) {
+		this.introduce = introduce;
+	}
 	public int getDriverId() {
 		return driverId;
 	}
